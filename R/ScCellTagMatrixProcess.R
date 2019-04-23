@@ -36,7 +36,7 @@ SingleCellDataWhitelist <- function(celltag.obj, whitels.cell.tag.file) {
   # Process the celltag matrix to format below
   # row - celltag
   # col - cells
-  CellTags <- t(CellTags)
+  CellTags <- Matrix::t(CellTags)
   celltag.rownames <- row.names(CellTags)
   
   # Filter the matrix using whitelist
