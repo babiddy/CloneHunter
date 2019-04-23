@@ -39,7 +39,7 @@ CloneCalling <- function(celltag.obj, correlation.cutoff) {
   Jaccard.Matrix <- celltag.obj@jaccard.mtx
   # Using the igraph package to facilitate the identification of membership to each clone
   test <- Jaccard.Matrix*lower.tri(Jaccard.Matrix)
-  check.corelation <- which(test > correlation.cutoff, arr.ind=TRUE)
+  check.corelation <- Matrix::which(test > correlation.cutoff, arr.ind=TRUE)
   graph.cor <- graph.data.frame(check.corelation, directed = FALSE)
   groups.cor <- split(unique(as.vector(check.corelation)), clusters(graph.cor)$membership)
   conv.groups.cor <- lapply(groups.cor,
