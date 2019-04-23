@@ -11,9 +11,9 @@
 #' MetricBasedFiltering(bam.test.object, 20, "less")
 #'
 MetricBasedFiltering <- function(celltag.obj, cutoff, comparison = "less") {
-  whitelisted.celltag.data <- t(celltag.obj@whitelisted.count)
+  whitelisted.celltag.data <- Matrix::t(celltag.obj@whitelisted.count)
   # Set up the filtering data frame
-  CellTags.per.cell.whitelisted.pf <- as.data.frame(rowSums(whitelisted.celltag.data))
+  CellTags.per.cell.whitelisted.pf <- as.data.frame(Matrix::rowSums(whitelisted.celltag.data))
   
   # Set up the filtered celltag dataset object
   if (comparison == "less") {
