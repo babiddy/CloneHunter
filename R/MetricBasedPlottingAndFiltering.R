@@ -49,9 +49,9 @@ MetricPlots <- function(celltag.obj) {
     celltag.data <- celltag.obj@metric.filtered.count
   }
   
-  CellTags.per.cell.whitelisted.pf <- rowSums(celltag.data)
+  CellTags.per.cell.whitelisted.pf <- Matrix::rowSums(celltag.data)
   CellTags.per.cell.avg <- mean(CellTags.per.cell.whitelisted.pf)
-  CellTags.frequency.whitelisted.pf <- colSums(celltag.data)
+  CellTags.frequency.whitelisted.pf <- Matrix::colSums(celltag.data)
   CellTags.freq.avg <- mean(CellTags.frequency.whitelisted.pf)
   plot(CellTags.per.cell.whitelisted.pf)
   plot(CellTags.frequency.whitelisted.pf)
