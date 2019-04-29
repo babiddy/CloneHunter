@@ -15,7 +15,8 @@ setClass("CellTag",
                       binary.mtx = "dgCMatrix",
                       jaccard.mtx = "dgCMatrix",
                       clone.composition = "ANY",
-                      clone.size.info = "data.frame"))
+                      clone.size.info = "data.frame",
+                      clone.signatures = "data.frame"))
 #' @export
 setMethod("show",
           "CellTag",
